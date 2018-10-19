@@ -1,3 +1,6 @@
 {
-    "discordToken": ""
+    "discordToken": "",
+    "telegramToken" : "",
+    "telegramChatID" : ""
+
 }

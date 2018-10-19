@@ -1,15 +1,16 @@
-const discord = require('discord.js');
+const Discord = require('discord.js');
+const TelegramBot = require('node-telegram-bot-api');
 var config = require('./config.json')
 
 
-const bot = new discord.Client;
+const discordBot = new Discord.Client;
+const telegramBot = new TelegramBot(config.telegramToken);
 
 // Connexion
-bot.login(config.discordToken);
+discordBot.login(config.discordToken);
 
 
 //For every message on the discord
-bot.on('message', function(message) {
-
-
+discordBot.on('message', function(message) {
+    telegramBot.sendMessage(config.telegramChatID, message.content);
 })
